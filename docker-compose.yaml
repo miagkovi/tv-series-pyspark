@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  spark-app:
+    build: .
+    image: spark-app:latest
+    volumes:
+      - ./data:/opt/spark-data
+    # - ./main.py:/opt/spark/work-dir/main.py
+    environment:
+      - SPARK_MODE=master
